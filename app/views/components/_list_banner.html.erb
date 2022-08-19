@@ -1,5 +1,13 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
-  <div class="container">
-    <h1 style="height: 30px;" class='text-center'><%= @list.name %></h1>
+<% if @list.photo.attached? %>
+  <div class="bannerlist" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>');">
+    <div class="container">
+      <h1 style="height: 30px;" class='text-center'><%= @list.name %></h1>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="bannerlist" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.F00dCf4bXxX0J-qEEf4qIQHaD6%26pid%3DApi&f=1);">
+    <div class="container">
+      <h1 style="height: 30px;" class='text-center'><%= @list.name %></h1>
+  </div>
+  </div>
+<% end  %>
