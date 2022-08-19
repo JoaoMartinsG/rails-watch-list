@@ -28,3 +28,6 @@ class ListsController < ApplicationController
     params.require(:list).permit(:name, :photo)
   end
 end
+
+
+#test
